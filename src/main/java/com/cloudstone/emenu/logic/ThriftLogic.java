@@ -447,6 +447,8 @@ public class ThriftLogic extends BaseLogic {
         if (pad == null) {
             pad = new Pad();
             pad.setImei(info.getIMEI());
+
+            // TODO: Come up with a better name.
             pad.setName(info.getIMEI());
             pad.setDesc("");
             pad.setBatteryLevel(info.getBatteryLevel());
