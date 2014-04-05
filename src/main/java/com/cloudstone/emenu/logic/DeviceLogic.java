@@ -46,13 +46,13 @@ public class DeviceLogic extends BaseLogic {
             if (p.getName().equals(pad.getName())) {
                 sameName = p;
                 if (!p.isDeleted()) {
-                    throw new DataConflictException("已存在相同名字的平板");
+                    throw new DataConflictException("Tablet name conflicts!");
                 }
             }
             if (p.getImei().equals(pad.getImei())) {
                 sameImei = p;
                 if (!p.isDeleted()) {
-                    throw new DataConflictException("已存在相同IMEI的平板");
+                    throw new DataConflictException("Tablet IMEI conflicts!");
                 }
             }
         }

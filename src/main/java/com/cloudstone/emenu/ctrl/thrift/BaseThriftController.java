@@ -51,8 +51,7 @@ public abstract class BaseThriftController extends BaseController {
         if (session == null) {
             throw new UserNotLoginException();
         }
-        if (now - session.getActivateTime() > ThriftSessionDb.EXPIRE_TIME
-                || !thriftLogic.isValidImei(context, session.getImei())) {
+        if (now - session.getActivateTime() > ThriftSessionDb.EXPIRE_TIME) {
             thriftSessionDb.remove(context, sessionId);
             throw new UserNotLoginException();
         }

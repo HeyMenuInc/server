@@ -11,6 +11,7 @@ import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cloudstone.emenu.data.Pad;
 import org.apache.thrift.TException;
 import org.apache.thrift.TProcessor;
 import org.slf4j.Logger;
@@ -66,9 +67,6 @@ public class ProfileThriftController extends BaseThriftController {
             }
             context.setLoginUserId(user.getId());
             context.setRestaurantId(user.getRestaurantId());
-            if (!thriftLogic.isValidImei(context, imei)) {
-                throw new IMEINotAllowedException();
-            }
 
             //build session
             long ran = new Random().nextLong();

@@ -445,7 +445,12 @@ public class ThriftLogic extends BaseLogic {
         String imei = info.getIMEI();
         Pad pad = deviceLogic.getPad(context, imei);
         if (pad == null) {
-            throw new TException("pad not found");
+            pad = new Pad();
+            pad.setImei(info.getIMEI());
+            pad.setName(info.getIMEI());
+            pad.setDesc("");
+            pad.setBatteryLevel(info.getBatteryLevel());
+            deviceLogic.addPad(context, pad);
         }
         pad.setBatteryLevel(info.getBatteryLevel());
         deviceLogic.updatePad(context, pad);
@@ -455,11 +460,11 @@ public class ThriftLogic extends BaseLogic {
             throws TableOccupiedException, TException {
         Table from = tableLogic.getByName(context, oldTablename);
         if (from == null || from.isDeleted()) {
-            throw new TException("桌子不存在: + " + oldTablename);
+            throw new TException("Table doesn't exist : + " + oldTablename);
         }
         Table to = tableLogic.getByName(context, newTableName);
         if (to == null || to.isDeleted()) {
-            throw new TException("桌子不存在: + " + newTableName);
+            throw new TException("Table doesn't exist: + " + newTableName);
         }
         if (to.getStatus() != Const.TableStatus.EMPTY) {
             throw new TableOccupiedException();
