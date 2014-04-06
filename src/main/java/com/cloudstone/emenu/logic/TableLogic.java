@@ -128,10 +128,10 @@ public class TableLogic extends BaseLogic {
     public Table occupy(EmenuContext context, int tableId, int customNum) {
         Table table = get(context, tableId);
         if (table == null || table.isDeleted()) {
-            throw new NotFoundException("桌子不存在");
+            throw new NotFoundException("Table doesn't exist.");
         }
         if (table.getStatus() != Const.TableStatus.EMPTY) {
-            throw new DataConflictException("桌子已被占用");
+            throw new DataConflictException("Table is busy.");
         }
         return occupy(context, table, customNum);
     }
@@ -154,7 +154,7 @@ public class TableLogic extends BaseLogic {
     public Table clearTable(EmenuContext context, int tableId) {
         Table table = get(context, tableId);
         if (table == null) {
-            throw new NotFoundException("该餐桌不存在");
+            throw new NotFoundException("Table doesn't exist!");
         }
         return clearTable(context, table);
     }
