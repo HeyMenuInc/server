@@ -271,6 +271,7 @@ footer li img{
 .background-hero, .background-hero-mobile{
 	background: url(../static/home/home_background.jpg);
 	background-repeat: no-repeat;
+	background-position: center;
 	position: absolute;
 }
 
