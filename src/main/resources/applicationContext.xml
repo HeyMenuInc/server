@@ -9,7 +9,14 @@
     <context:component-scan base-package="com.cloudstone.emenu"></context:component-scan>
     <context:property-placeholder location="classpath:spring.properties" />
     <mvc:annotation-driven />
-    <mvc:resources mapping="/static/**" location="/WEB-INF/view/img/" />
+    <mvc:resources mapping="/static/**/*.png" location="/WEB-INF/view/img/" />
+    <mvc:resources mapping="/static/**/*.gif" location="/WEB-INF/view/img/" />
+    <mvc:resources mapping="/static/**/*.jpg" location="/WEB-INF/view/img/" />
+    <mvc:resources mapping="/static/**/*.ico" location="/WEB-INF/view/img/" />
+    <mvc:resources mapping="/static/**/*.jpeg" location="/WEB-INF/view/img/" />
+    <mvc:resources mapping="/static/**/*.js" location="/WEB-INF/view/js/" />
+    <mvc:resources mapping="/static/**/*.css" location="/WEB-INF/view/css/" />
+    <mvc:resources mapping="/static/**/*.less" location="/WEB-INF/view/css/" />
     <mvc:default-servlet-handler/>
 
     <!--HttpMessageConverter -->

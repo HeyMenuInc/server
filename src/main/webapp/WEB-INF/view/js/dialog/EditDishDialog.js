@@ -24,6 +24,7 @@ define(function (require, exports, module) {
         
         render: function () {
             var data = this.getRenderData();
+            EditDialog.prototype.render.apply(this, arguments);
             if (data.imageId && !data.uriData) {
                 //fetch uri data
                 $.ajax({

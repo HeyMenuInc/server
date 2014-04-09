@@ -33,7 +33,7 @@ public class StaticController extends BaseWebController {
             "png", "img", "gif", "jpg", "ico"
     };
 
-    @RequestMapping(value = {"/static/**/*.js", "/static/**/*.css", "/static/**/*.less"})
+    @RequestMapping(value = {"/static/**/*.handlebars.js"})
     public void get(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             innerGet(request.getRequestURI().toString(), response);
