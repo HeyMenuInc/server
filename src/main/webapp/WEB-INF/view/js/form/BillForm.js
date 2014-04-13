@@ -27,15 +27,15 @@ define(function (require, exports, module) {
             el: '.input-tip',
             validators: [{
                 type: Required,
-                errorMessage: '请输入服务费'
+                errorMessage: 'Please enter tip.'
             }, {
                 type: Number,
-                errorMessage: '请输入数字'
+                errorMessage: 'Please enter numbers.'
             }, {
                 type: MoreThan,
                 other: 0,
                 including: true,
-                errorMessage: '不能小于0'
+                errorMessage: "Can't be negative"
             }]
         }, {
             name: 'discount',
@@ -43,20 +43,20 @@ define(function (require, exports, module) {
             el: '.input-discount',
             validators: [{
                 type: Required,
-                errorMessage: '请输入折扣'
+                errorMessage: 'Please enter discount'
             }, {
                 type: Number,
-                errorMessage: '请输入数字'
+                errorMessage: 'Please enter numbers.'
             }, {
                 type: MoreThan,
                 other: 0,
                 including: true,
-                errorMessage: '不能小于0'
+                errorMessage: "Can't be negative"
             }, {
                 type: LessThan,
                 other: 10,
                 including: true,
-                errorMessage: '不能大于10'
+                errorMessage: "Can't be larget than 10"
             }]
         }, {
             name: 'cost',
@@ -64,15 +64,15 @@ define(function (require, exports, module) {
             el: '.input-cost',
             validators: [{
                 type: Required,
-                errorMessage: '请输入实收金额'
+                errorMessage: 'Please enter cost.'
             }, {
                 type: Number,
-                errorMessage: '请输入数字'
+                errorMessage: 'Please enter numbers.'
             }, {
                 type: MoreThan,
                 other: 0,
                 including: true,
-                errorMessage: '不能小于0'
+                errorMessage: "Can't negative"
             }]
         }, {
             name: 'invoice',
@@ -111,13 +111,13 @@ define(function (require, exports, module) {
         /* -------------------- Event Listener ----------------------- */
         
         onSuccess: function (evt) {
-            window.alert('结账成功');
+            window.alert('Checkout successfully!');
             window.location = '/home';
         },
 
         onSubmit: function (evt) {
             var payType = this.findItemByName('payType').getLabel();
-            if (window.confirm('是否' + payType + '结账?')) {
+            if (window.confirm('Checkout with ' + payType + '?')) {
                 BaseForm.prototype.onSubmit.apply(this, arguments);
             }
         }

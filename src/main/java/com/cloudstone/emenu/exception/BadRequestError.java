@@ -14,4 +14,8 @@ public class BadRequestError extends HttpStatusError {
         super(400, "", null);
     }
 
+    public BadRequestError(String message) {
+        super(400, message, null);
+    }
+
 }

@@ -11,4 +11,4 @@ emenu.log*
 .project
 .pydevproject
 .idea
-server.iml
+*.iml

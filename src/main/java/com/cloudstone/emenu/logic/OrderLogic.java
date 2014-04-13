@@ -182,25 +182,25 @@ public class OrderLogic extends BaseLogic {
     public Bill payBill(EmenuContext context, Bill bill, User user) {
 
         if (getBillByOrderId(context, bill.getOrderId()) != null) {
-            throw new DataConflictException("请勿重复提交订单");
+            throw new DataConflictException("Don't resubmit bill.");
         }
         Order order = getOrder(context, bill.getOrderId());
         if (order == null || order.isDeleted()) {
-            throw new BadRequestError();
+            throw new BadRequestError("Order deleted");
         }
         Table table = tableLogic.get(context, order.getTableId());
-        if (table == null || table.getStatus() != TableStatus.OCCUPIED) {
+        if (table.getStatus() != TableStatus.OCCUPIED) {
             throw new BadRequestError();
         }
-        Vip vip = null;
-        if (bill.getVipId() != -1) {
-            vip = vipLogic.get(context, bill.getVipId());
-            if (vip == null || vip.isDeleted())
-                throw new BadRequestError();
-            if (vip.getMoney() < bill.getCost()) {
-                throw new BadRequestError();
-            }
-        }
+//        Vip vip = null;
+//        if (bill.getVipId() != -1) {
+//            vip = vipLogic.get(context, bill.getVipId());
+//            if (vip == null || vip.isDeleted())
+//                throw new BadRequestError();
+//            if (vip.getMoney() < bill.getCost()) {
+//                throw new BadRequestError();
+//            }
+//        }
 
         order.setStatus(Const.OrderStatus.PAYED);
         order.setPrice(bill.getCost());
@@ -212,13 +212,13 @@ public class OrderLogic extends BaseLogic {
         // Start transaction
         context.beginTransaction(dataSource);
         try {
-            if (vip != null) {
-                //Set real earn to 0
-                vipLogic.recharge(context, bill.getVipId(), -bill.getCost());
-                bill.setVipCost(bill.getCost());
-                bill.setCost(0);
-                order.setPrice(0);
-            }
+//            if (vip != null) {
+//                //Set real earn to 0
+//                vipLogic.recharge(context, bill.getVipId(), -bill.getCost());
+//                bill.setVipCost(bill.getCost());
+//                bill.setCost(0);
+//                order.setPrice(0);
+//            }
             orderDb.update(context, order);
             billDb.add(context, bill);
             table.setStatus(TableStatus.EMPTY);
@@ -229,7 +229,7 @@ public class OrderLogic extends BaseLogic {
             try {
                 printerLogic.printBill(context, bill, user);
             } catch (Exception e) {
-                throw new PreconditionFailedException("打印失败", e);
+                throw new PreconditionFailedException("Print failed!", e);
             }
 
             context.commitTransaction();

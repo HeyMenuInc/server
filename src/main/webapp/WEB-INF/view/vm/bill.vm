@@ -24,7 +24,7 @@
                 <span class="span2">$order.originPrice</span>
             </div>
             <div class="row">
-                <span class="span1">Waiter/Waitress:</span>
+                <span class="span1">Server:</span>
                 <span class="span2">$order.user.realName</span>
             </div>
             <div class="input-tip control-group">
