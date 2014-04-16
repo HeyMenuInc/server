@@ -65,7 +65,6 @@ public class MenuThriftController extends BaseThriftController {
 
             context.setRestaurantId(context.getRestaurantId());
             Menu menu = thriftLogic.getCurrentMenu(context);
-            LOG.info("menu name " + menu.getPagesIterator().next().goodsList.get(0).name);
             return menu;
         }
     }
