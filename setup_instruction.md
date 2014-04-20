@@ -24,3 +24,7 @@ scp /home/zhou/workspace/hummingbird/emenu_server/lib/sqlite/libsqlite4java-linu
 
 mkdir /var/lib/sqlite
 chmod a+w /var/lib/sqlite
+
+sudo mkdir /logs
+touch /logs/emenu.log
+sudo chmod a+w /logs/emenu.log

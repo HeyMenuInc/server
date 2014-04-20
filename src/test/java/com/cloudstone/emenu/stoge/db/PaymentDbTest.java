@@ -10,6 +10,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import java.io.File;
 import java.util.List;
@@ -20,6 +22,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by nicholaszhao on 3/30/14.
  */
+@RunWith(JUnit4.class)
 public class PaymentDbTest {
 
     @Rule
@@ -48,7 +51,6 @@ public class PaymentDbTest {
         assertEquals(1, cash.getId());
         PayType creditCard = payTypes.get(1);
         assertEquals(2, creditCard.getId());
-
     }
 
 }
