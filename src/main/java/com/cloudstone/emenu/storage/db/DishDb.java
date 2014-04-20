@@ -159,8 +159,8 @@ public class DishDb extends SQLiteDb implements IDishDb {
             stmt.bind(13, dish.getUpdateTime());
             stmt.bind(14, dish.isDeleted() ? 1 : 0);
             stmt.bind(15, dish.isSoldout() ? 1 : 0);
-            stmt.bind(16, dish.getId());
-            stmt.bind(17, dish.getRestaurantId());
+            stmt.bind(16, dish.getRestaurantId());
+            stmt.bind(17, dish.getId());
         }
     }
 
