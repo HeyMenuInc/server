@@ -7,11 +7,15 @@ package com.cloudstone.emenu;
 import com.cloudstone.emenu.exception.ServerError;
 import com.cloudstone.emenu.storage.db.util.DbTransaction;
 import com.cloudstone.emenu.storage.db.util.SqliteDataSource;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 /**
  * @author xuhongfeng
  */
 public class EmenuContext {
+
     private int loginUserId;
     // id of the restaurant the logged in user is associated with
 

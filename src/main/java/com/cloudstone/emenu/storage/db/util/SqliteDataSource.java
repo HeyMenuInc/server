@@ -14,21 +14,26 @@ import org.springframework.stereotype.Component;
 
 import com.almworks.sqlite4java.SQLiteConnection;
 import com.almworks.sqlite4java.SQLiteException;
-import com.cloudstone.emenu.constant.Const;
 
 /**
  * @author xuhongfeng
  */
 @Component
-public class SqliteDataSource {
+public class SqliteDataSource  {
     private static final Logger LOG = LoggerFactory.getLogger(SqliteDataSource.class);
 
     private File dbFile;
 
+    public void setDbFilePath(String dbFilePath) {
+        this.dbFilePath = dbFilePath;
+    }
+
+    private String dbFilePath;
+
     public File getDbFile() {
         if (dbFile == null) {
-            String dbPath = System.getProperty(Const.PARAM_DB_FILE);
-            dbFile = new File(dbPath);
+            // String dbPath = System.getProperty(dbFilePath);
+            dbFile = new File(dbFilePath);
         }
         if (!dbFile.exists()) {
             synchronized (SqliteDataSource.class) {

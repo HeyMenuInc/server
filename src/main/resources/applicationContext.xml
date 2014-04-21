@@ -101,4 +101,9 @@
         </property>
     </bean>
 
+    <bean  id="applicationContextProvider" class="com.cloudstone.emenu.ApplicationContextProvider"></bean>
+
+    <bean id="sqliteDataSource" class="com.cloudstone.emenu.storage.db.util.SqliteDataSource">
+        <property name="dbFilePath" value="cloudstone.db"></property>
+    </bean>
 </beans>
