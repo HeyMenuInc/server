@@ -34,8 +34,8 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath:commonContext.xml
             classpath:applicationContext.xml
+            classpath:commonContext.xml
         </param-value>
     </context-param>
 	<listener>

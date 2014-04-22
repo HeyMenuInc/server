@@ -1,5 +1,7 @@
 package com.cloudstone.emenu;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 
 import java.io.File;
@@ -9,9 +11,11 @@ import java.util.Map;
  * Created by charliez on 4/21/14.
  */
 public class AppConfig {
+    private static final Logger LOG = LoggerFactory.getLogger(AppConfig.class);
 
     public void setMaps(Map<Object, Object> maps) throws BeansException {
         if (AppConfig.maps == null) {
+            LOG.info("Setting appConfig: " + maps.toString());
             AppConfig.maps = maps;
         }
     }
