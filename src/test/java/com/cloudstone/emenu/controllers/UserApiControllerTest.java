@@ -4,6 +4,7 @@ package com.cloudstone.emenu.controllers;
  * Created by charliez on 4/20/14.
  */
 import com.cloudstone.emenu.EmenuContext;
+import com.cloudstone.emenu.data.User;
 import com.cloudstone.emenu.logic.UserLogic;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,6 +45,29 @@ public class UserApiControllerTest {
         Mockito.reset(userLogicMock);
 
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+    }
+
+    @Test
+    public void login() throws Exception {
+        when(userLogicMock.login(any(EmenuContext.class), eq("adminTest"), eq("passwordTest")))
+                .thenReturn(new User());
+
+        mockMvc.perform(post("/api/login")
+                .param("name", "adminTest").param("password", "passwordTest"))
+                .andExpect(status().isOk());
+        verify(userLogicMock, times(1))
+                .login(any(EmenuContext.class), eq("adminTest"), eq("passwordTest"));
+
+        when(userLogicMock.login(any(EmenuContext.class), eq("adminTest"), eq("wrongPassword")))
+                .thenReturn(null);
+
+        mockMvc.perform(post("/api/login")
+                .param("name", "adminTest").param("password", "wrongPassword"))
+                .andExpect(status().isUnauthorized());
+
+        verify(userLogicMock, times(1))
+                .login(any(EmenuContext.class), eq("adminTest"), eq("wrongPassword"));
+        verifyNoMoreInteractions(userLogicMock);
     }
 
     @Test
