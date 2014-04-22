@@ -48,7 +48,7 @@ public class UserLogic extends BaseLogic {
     public User add(EmenuContext context, User user) {
         User oldUser = userDb.getByName(context, user.getName());
         if (oldUser != null && !oldUser.isDeleted()) {
-            throw new DataConflictException("用户名已存在");
+            throw new DataConflictException("User exists.");
         }
         long now = System.currentTimeMillis();
         user.setUpdateTime(now);
@@ -76,7 +76,7 @@ public class UserLogic extends BaseLogic {
         //TODO BUG?
         User oldUser = userDb.getByName(context, user.getName());
         if (oldUser != null && oldUser.getId() != user.getId() && !oldUser.isDeleted()) {
-            throw new DataConflictException("用户名已存在");
+            throw new DataConflictException("User exists.");
         }
         long now = System.currentTimeMillis();
         user.setUpdateTime(now);

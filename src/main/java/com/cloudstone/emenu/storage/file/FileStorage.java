@@ -4,17 +4,19 @@
  */
 package com.cloudstone.emenu.storage.file;
 
+
 import java.io.File;
 
-import com.cloudstone.emenu.constant.Const;
+import com.cloudstone.emenu.AppConfig;
 import com.cloudstone.emenu.storage.BaseStorage;
+
 
 /**
  * @author xuhongfeng
  */
 public class FileStorage extends BaseStorage {
     public File getCloudstoneDataDir() {
-        String path = System.getProperty(Const.PARAM_CLOUDSTONE_DATA_DIR);
+        String path = AppConfig.getCloudstoneDataDir();
         return new File(path);
     }
 

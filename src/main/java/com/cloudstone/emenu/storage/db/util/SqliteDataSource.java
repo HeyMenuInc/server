@@ -8,6 +8,7 @@ package com.cloudstone.emenu.storage.db.util;
 import java.io.File;
 import java.io.IOException;
 
+import com.cloudstone.emenu.AppConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -22,23 +23,19 @@ import com.almworks.sqlite4java.SQLiteException;
 public class SqliteDataSource  {
     private static final Logger LOG = LoggerFactory.getLogger(SqliteDataSource.class);
 
-    private File dbFile;
-
-    public void setDbFilePath(String dbFilePath) {
-        this.dbFilePath = dbFilePath;
-    }
-
-    private String dbFilePath;
+    private File dbFile = null;
 
     public File getDbFile() {
         if (dbFile == null) {
-            // String dbPath = System.getProperty(dbFilePath);
+            String dbFilePath = AppConfig.getDBFilePath();
+            LOG.info("DB file location: " + dbFilePath);
             dbFile = new File(dbFilePath);
         }
         if (!dbFile.exists()) {
             synchronized (SqliteDataSource.class) {
                 if (!dbFile.exists()) {
                     try {
+                        LOG.info("Creating new DB file at: " + dbFile.getAbsolutePath());
                         dbFile.createNewFile();
                     } catch (IOException e) {
                         throw new RuntimeException(e);

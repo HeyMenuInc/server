@@ -1,4 +1,4 @@
-package com.cloudstone.emenu.controllers;
+package com.cloudstone.emenu.integration;
 
 /**
  * Created by charliez on 4/20/14.
@@ -28,59 +28,28 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:unitTestContext.xml", "classpath:commonContext.xml"})
+@ContextConfiguration(locations = {"classpath:integrationTestContext.xml", "classpath:commonContext.xml"})
 @WebAppConfiguration
-public class UserApiControllerTest {
+public class UserApiIntegrationTest {
 
     private MockMvc mockMvc;
-
-    @Autowired
-    private UserLogic userLogicMock;
 
     @Autowired
     private WebApplicationContext webApplicationContext;
 
     @Before
     public void setUp() {
-        Mockito.reset(userLogicMock);
-
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
     @Test
     public void login() throws Exception {
-        when(userLogicMock.login(any(EmenuContext.class), eq("adminTest"), eq("passwordTest")))
-                .thenReturn(new User());
-
         mockMvc.perform(post("/api/login")
-                .param("name", "adminTest").param("password", "passwordTest"))
+                .param("name", "admin").param("password", "admin"))
                 .andExpect(status().isOk());
-        verify(userLogicMock, times(1))
-                .login(any(EmenuContext.class), eq("adminTest"), eq("passwordTest"));
-
-        when(userLogicMock.login(any(EmenuContext.class), eq("adminTest"), eq("wrongPassword")))
-                .thenReturn(null);
 
         mockMvc.perform(post("/api/login")
-                .param("name", "adminTest").param("password", "wrongPassword"))
+                .param("name", "admin").param("password", "randomStuff"))
                 .andExpect(status().isUnauthorized());
-
-        verify(userLogicMock, times(1))
-                .login(any(EmenuContext.class), eq("adminTest"), eq("wrongPassword"));
-        verifyNoMoreInteractions(userLogicMock);
-    }
-
-    @Test
-    public void findAllPublicUserNames() throws Exception {
-        when(userLogicMock.listUserNames(any(EmenuContext.class))).thenReturn(Arrays.asList("first", "second"));
-
-        mockMvc.perform(get("/api/public/user-names"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0]", is("first")))
-                .andExpect(jsonPath("$[1]", is("second")));
-
-        verify(userLogicMock, times(1)).listUserNames(any(EmenuContext.class));
-        verifyNoMoreInteractions(userLogicMock);
     }
 }

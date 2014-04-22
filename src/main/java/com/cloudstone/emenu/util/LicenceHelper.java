@@ -15,6 +15,7 @@ import java.util.Enumeration;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.cloudstone.emenu.AppConfig;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
 import org.jasypt.util.text.BasicTextEncryptor;
@@ -135,7 +136,7 @@ public class LicenceHelper {
     }
 
     private File lisenceFile() {
-        String dirPath = System.getProperty(Const.PARAM_CLOUDSTONE_DATA_DIR);
+        String dirPath = AppConfig.getCloudstoneDataDir();
         File dir = new File(dirPath);
         File licenceFile = new File(dir, "emenu.licence");
 

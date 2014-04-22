@@ -8,6 +8,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.cloudstone.emenu.AppConfig;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,11 +17,9 @@ import org.springframework.stereotype.Component;
 
 import com.almworks.sqlite4java.SQLiteConnection;
 import com.cloudstone.emenu.EmenuContext;
-import com.cloudstone.emenu.constant.Const;
 import com.cloudstone.emenu.constant.ServerConfig;
 import com.cloudstone.emenu.logic.ConfigLogic;
 import com.cloudstone.emenu.logic.MenuLogic;
-import com.cloudstone.emenu.storage.db.GenStatDb;
 import com.cloudstone.emenu.storage.db.IDishStatDb;
 import com.cloudstone.emenu.storage.db.IGenStatDb;
 import com.cloudstone.emenu.storage.db.IMenuStatDb;
@@ -81,12 +80,12 @@ public class DbUpgrader {
     }
 
     private void startUpgrade(EmenuContext context) throws Exception {
-        File dbDir = new File(System.getProperty(Const.PARAM_CLOUDSTONE_DATA_DIR));
+        File dbDir = new File(AppConfig.getCloudstoneDataDir());
         File bakDir = new File(dbDir, "backup");
         if (!bakDir.exists()) {
             bakDir.mkdirs();
         }
-        File dbFile = new File(System.getProperty(Const.PARAM_DB_FILE));
+        File dbFile = new File(AppConfig.getDBFilePath());
         File tmpFile = new File(dbDir, "tmp.db");
         File bakFile = new File(bakDir, FORMAT.get().format(new Date()) + ".db");
 

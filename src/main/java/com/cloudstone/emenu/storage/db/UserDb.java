@@ -6,6 +6,8 @@ package com.cloudstone.emenu.storage.db;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
@@ -27,6 +29,7 @@ import com.cloudstone.emenu.util.RsaUtils;
  */
 @Repository
 public class UserDb extends SQLiteDb implements IUserDb {
+    private static final Logger LOG = LoggerFactory.getLogger(UserDb.class);
 
     @Override
     public String getTableName() {
