@@ -5,6 +5,7 @@ emenu.log*
 *.swp
 *.swo
 *.DS_Store
+out
 
 # IDE config
 .classpath
