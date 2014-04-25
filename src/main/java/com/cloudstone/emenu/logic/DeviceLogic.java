@@ -75,12 +75,12 @@ public class DeviceLogic extends BaseLogic {
         for (Pad p : pads) {
             if (p.getName().equals(pad.getName())) {
                 if (!p.isDeleted() && p.getId() != pad.getId()) {
-                    throw new DataConflictException("已存在相同名字的平板");
+                    throw new DataConflictException("Device name already exists");
                 }
             }
             if (p.getImei().equals(pad.getImei()) && p.getId() != pad.getId()) {
                 if (!p.isDeleted()) {
-                    throw new DataConflictException("已存在相同IMEI的平板");
+                    throw new DataConflictException("Device IMEI already exists");
                 }
             }
         }

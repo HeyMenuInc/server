@@ -73,11 +73,11 @@ define(function (require, exports, module) {
             if (!this.hasValidator(Required)) {
                 if (this.wrapId) {
                     data.unshift({
-                        name: '无',
+                        name: 'None',
                         id: 0
                     });
                 } else {
-                    data.unshift('无');
+                    data.unshift('None');
                 }
             }
             return data;

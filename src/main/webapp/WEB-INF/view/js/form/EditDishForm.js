@@ -24,7 +24,7 @@ define(function (require, exports, module) {
             el: '.input-name',
             validators: [{
                 type: Required,
-                errorMessage: '菜品名称不能为空'
+                errorMessage: 'Name is required'
             }]
         }, {
             name: 'price',
@@ -32,15 +32,15 @@ define(function (require, exports, module) {
             el: '.input-price',
             validators: [{
                 type: Required,
-                errorMessage: '价格不能为空'
+                errorMessage: 'Price is required'
             }, {
                 type: Number,
-                errorMessage: '请输入数字'
+                errorMessage: 'Please input a number'
             }, {
                 type: MoreThan,
                 other: 0,
                 including: true,
-                errorMessage: '不能小于0'
+                errorMessage: 'Please input a positive number'
             }]
         }, {
             name: 'memberPrice',
@@ -48,12 +48,12 @@ define(function (require, exports, module) {
             el: '.input-memberPrice',
             validators: [{
                 type: Number,
-                errorMessage: '请输入数字'
+                errorMessage: 'Please input price'
             }, {
                 type: MoreThan,
                 other: 0,
                 including: true,
-                errorMessage: '不能小于0'
+                errorMessage: 'Invalid price'
             }]
         }, {
             name: 'unit',

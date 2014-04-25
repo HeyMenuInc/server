@@ -57,19 +57,19 @@ public class VelocityRender {
         String payTypeString = null;
         switch (payType) {
             case 1:
-                payTypeString = "现金";
+                payTypeString = "Cash";
                 break;
             case 2:
-                payTypeString = "刷卡";
+                payTypeString = "Credit/Debit";
                 break;
             case 3:
-                payTypeString = "会员卡";
+                payTypeString = "Member Card";
                 break;
             case 4:
-                payTypeString = "签单";
+                payTypeString = "Check";
                 break;
             default:
-                payTypeString = "现金";
+                payTypeString = "Cash";
                 break;
         }
         context.put("paytype", payTypeString);

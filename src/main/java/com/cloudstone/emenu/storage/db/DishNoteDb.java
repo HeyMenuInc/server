@@ -19,7 +19,7 @@ public class DishNoteDb extends IdNameDb<DishNote> implements IDishNoteDb {
     private static final String TABLE_NAME = "dishNote";
 
     private static final String[] DEFAULT_DISH_NOTES = {
-            "不放辣", "不放蒜"
+            "No spice", "No garlic"
     };
 
     @Override

@@ -9,7 +9,7 @@ define(function (require, exports, module) {
 
     var SoldoutList = BaseTable.extend({
         
-        heads: ['菜品', '操作'],
+        heads: ['Dish', 'Action'],
 
         CollectionType: require('../collection/DishCollection'),
 

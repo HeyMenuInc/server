@@ -41,7 +41,7 @@ public class CommonCache extends BaseCache {
             }
         }
         if (category == null) {
-            category = "其它";
+            category = "Other";
         }
         return category;
     }

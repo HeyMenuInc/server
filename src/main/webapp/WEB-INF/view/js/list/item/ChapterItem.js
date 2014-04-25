@@ -84,7 +84,7 @@ define(function (require, exports, module) {
         },
 
         onDeletePage: function (pageModel) {
-            if (window.confirm('确定删除菜单分页?')) {
+            if (window.confirm('Confirm deleting page?')) {
                 pageModel.destroy({
                     success: function () {
                         var options = {

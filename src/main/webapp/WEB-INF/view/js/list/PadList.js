@@ -49,7 +49,7 @@ define(function (require, exports, module) {
         },
 
         onDeletePad: function (padModel) {
-            if (window.confirm('确定删除平板' + padModel.get('name'))) {
+            if (window.confirm('Confirm removing device: ' + padModel.get('name'))) {
                 padModel.destroy({
                     success: function () {
                         this.refresh();

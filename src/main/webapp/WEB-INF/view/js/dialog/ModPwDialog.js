@@ -12,7 +12,7 @@ define(function (require, exports, module) {
     });
 
     var ModPwDialog = FormDialog.extend({
-        header: '修改密码',
+        header: 'Change password',
 
         ContentType: Content,
 

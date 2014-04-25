@@ -26,25 +26,25 @@ define(function (require, exports, module) {
             }
             if (status === 500 || status === 412 || status === 409) {
                 if (status === 500 && !xhr.responseText) {
-                    window.alert("服务器错误");
+                    window.alert("Server error");
                 } else {
                     var resp = JSON.parse(xhr.responseText);
                     window.alert(resp.message);
                 }
             } else if (status === 504) {
-                window.alert('网络繁忙, 请稍后重试');
+                window.alert('Server busy, please try again');
             } else if (status === 401) {
-                window.alert('长时间未操作，请重新登陆');
+                window.alert('Please login again');
                 window.location = '/login';
             } else if (status === 512) {
                 window.location = '/upgrading';
             } else if (status === 0) {
-                window.alert("浏览器错误，请重启浏览器");
+                window.alert("Browser error, try restarting your browser");
             } else {
                 if (error) {
                     error.apply(this, arguments);
                 } else {
-                    window.alert('网络错误!');
+                    window.alert('Network error');
                 }
             }
         };
