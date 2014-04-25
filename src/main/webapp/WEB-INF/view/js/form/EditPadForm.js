@@ -17,14 +17,14 @@ define(function (require, exports, module) {
             type: Text,
             validators: [{
                 type: Required,
-                errorMessage: '平板名称不能为空'
+                errorMessage: 'Device name must not be empty'
             }]
         }, {
             name: 'imei',
             type: Text,
             validators: [{
                 type: Required,
-                errorMessage: 'IMEI码不能为空'
+                errorMessage: 'IMEI code must not be empty'
             }]
         }, {
             name: 'desc',

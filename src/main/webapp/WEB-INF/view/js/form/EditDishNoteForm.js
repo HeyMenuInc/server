@@ -17,7 +17,7 @@ define(function (require, exports, module) {
             el: '.input-name',
             validators: [{
                 type: Required,
-                errorMessage: '名称不能为空'
+                errorMessage: 'Name is required'
             }]
         }]
     });

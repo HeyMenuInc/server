@@ -26,7 +26,7 @@ define(function (require, exports, module) {
             wrapId: true,
             validators: [{
                 type: Required,
-                errorMessage: '请选择打印模板'
+                errorMessage: 'Please select a template'
             }]
         }],
 

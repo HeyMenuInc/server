@@ -19,7 +19,7 @@ define(function (require, exports, module) {
             el: '.input-password-old',
             validators: [{
                 type: Required,
-                errorMessage: '旧密码不能为空'
+                errorMessage: 'Old password must not be empty'
             }]
         }, {
             name: 'newPassword',
@@ -27,7 +27,7 @@ define(function (require, exports, module) {
             el: '.input-password-new',
             validators: [{
                 type: Required,
-                errorMessage: '新密码不能为空'
+                errorMessage: 'New password must not be empty'
             }]
         }, {
             name: 'passwordConfirm',
@@ -36,7 +36,7 @@ define(function (require, exports, module) {
             validators: [{
                 type: IsSame,
                 otherItem: 'newPassword',
-                errorMessage: '两次密码输入不一致'
+                errorMessage: 'Password mismatch'
             }]
         }],
 

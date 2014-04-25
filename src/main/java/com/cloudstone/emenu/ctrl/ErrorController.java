@@ -78,7 +78,7 @@ public class ErrorController extends BaseController {
             resp.setContentType("application/json; charset=UTF-8");
             model.put("code", e.getStatusCode());
             if (e.getStatusCode() == 500 && StringUtils.isBlank(e.getMessage())) {
-                model.put("message", "服务器错误");
+                model.put("message", "Server Error");
             } else {
                 model.put("message", e.getMessage());
             }

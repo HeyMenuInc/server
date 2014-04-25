@@ -577,7 +577,7 @@ public class MenuLogic extends BaseLogic {
     public DishTag updateDishTag(EmenuContext context, DishTag tag) {
         DishTag old = dishTagDb.getDishTagByName(context, tag.getName());
         if (old != null && old.getId() != tag.getId() && !old.isDeleted()) {
-            throw new DataConflictException("该标签已存在");
+            throw new DataConflictException("Tag exists.");
         }
         tag.setUpdateTime(System.currentTimeMillis());
         dishTagDb.updateDishTag(context, tag);

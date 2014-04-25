@@ -285,7 +285,7 @@ public class OrderLogic extends BaseLogic {
     public Order cancelDish(EmenuContext context, int orderId, int dishId, int count) {
         Order order = getOrder(context, orderId);
         if (order == null || order.isDeleted()) {
-            throw new NotFoundException("该订单不存在");
+            throw new NotFoundException("Can not find order");
         }
         List<OrderDish> dishes = listOrderDishes(context, orderId);
         OrderDish dish = null;
@@ -296,10 +296,10 @@ public class OrderLogic extends BaseLogic {
             }
         }
         if (dish == null) {
-            throw new NotFoundException("订单中不存在该菜品");
+            throw new NotFoundException("Invalid dish");
         }
         if (dish.getNumber() < count) {
-            throw new PreconditionFailedException("菜品数量错误");
+            throw new PreconditionFailedException("Invalid quantity");
         }
         context.beginTransaction(dataSource);
         try {
@@ -351,7 +351,7 @@ public class OrderLogic extends BaseLogic {
     public Order freeDish(EmenuContext context, int orderId, int dishId, int count) {
         Order order = getOrder(context, orderId);
         if (order == null || order.isDeleted()) {
-            throw new NotFoundException("该订单不存在");
+            throw new NotFoundException("Can not find order");
         }
         List<OrderDish> dishes = listOrderDishes(context, orderId);
         OrderDish dish = null;
@@ -362,10 +362,10 @@ public class OrderLogic extends BaseLogic {
             }
         }
         if (dish == null) {
-            throw new NotFoundException("订单中不存在该菜品");
+            throw new NotFoundException("No dish in the order");
         }
         if (dish.getNumber() < count) {
-            throw new PreconditionFailedException("菜品数量错误");
+            throw new PreconditionFailedException("Invalid quantity");
         }
         context.beginTransaction(dataSource);
         try {
@@ -390,10 +390,10 @@ public class OrderLogic extends BaseLogic {
     public OrderVO incrUpdate(EmenuContext context, int orderId, List<OrderDishVO> dishes) {
         Order order = getOrder(context, orderId);
         if (order == null || order.isDeleted()) {
-            throw new NotFoundException("订单不存在");
+            throw new NotFoundException("Can not find order");
         }
         if (order.getStatus() == Const.OrderStatus.PAYED) {
-            throw new DataConflictException("该订单已结账");
+            throw new DataConflictException("Order is payed");
         }
         context.beginTransaction(dataSource);
         try {
@@ -401,7 +401,7 @@ public class OrderLogic extends BaseLogic {
             for (OrderDishVO r : dishes) {
                 Dish dish = menuLogic.getDish(context, r.getId());
                 if (dish == null || dish.isDeleted()) {
-                    throw new NotFoundException("存在非法菜品");
+                    throw new NotFoundException("Invalid dish");
                 }
                 originPrice += dish.getPrice() * r.getNumber();
                 r.setPrice(dish.getPrice());
@@ -444,13 +444,13 @@ public class OrderLogic extends BaseLogic {
     public OrderVO submit(EmenuContext context, Order order, List<OrderDishVO> dishes) {
         Table table = tableLogic.get(context, order.getTableId());
         if (table == null || table.isDeleted()) {
-            throw new NotFoundException("该餐桌不存在");
+            throw new NotFoundException("Can not find table");
         }
         if (table.getStatus() != Const.TableStatus.OCCUPIED) {
-            throw new PreconditionFailedException("该餐桌未开台");
+            throw new PreconditionFailedException("Table not open");
         }
         if (table.getOrderId() != 0) {
-            throw new DataConflictException("该餐桌已经下单");
+            throw new DataConflictException("An order from this table is already submitted");
         }
         int customerNumber = tableLogic.getCustomerNumber(context, table.getId());
         context.beginTransaction(dataSource);
@@ -462,7 +462,7 @@ public class OrderLogic extends BaseLogic {
             for (OrderDishVO r : dishes) {
                 Dish dish = menuLogic.getDish(context, r.getId());
                 if (dish == null || dish.isDeleted()) {
-                    throw new NotFoundException("存在非法菜品");
+                    throw new NotFoundException("Invalid dish");
                 }
                 originPrice += dish.getPrice() * r.getNumber();
                 r.setPrice(dish.getPrice());

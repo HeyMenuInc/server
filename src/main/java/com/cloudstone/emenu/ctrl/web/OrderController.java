@@ -36,7 +36,7 @@ public class OrderController extends BaseWebController {
         }
         Order order = orderLogic.getOrder(context, table.getOrderId());
         if (order == null || order.isDeleted()) {
-            throw new PreconditionFailedException("该餐桌未下单");
+            throw new PreconditionFailedException("Can not find order");
         }
         model.put("order", orderWraper.wrap(context, order));
         return sendView("bill", req, resp, model);
@@ -49,7 +49,7 @@ public class OrderController extends BaseWebController {
         EmenuContext context = newContext(req);
         Order order = orderLogic.getOrder(context, orderId);
         if (order == null || order.isDeleted()) {
-            throw new PreconditionFailedException("该订单不存在");
+            throw new PreconditionFailedException("Can not find order");
         }
         model.put("order", orderWraper.wrap(context, order));
         if (order.getStatus() == Const.OrderStatus.PAYED) {

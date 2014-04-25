@@ -44,23 +44,23 @@ public class TableLogic extends BaseLogic {
     public void changeTable(EmenuContext context, int fromId, int toId) {
         Table from = get(context, fromId);
         if (from == null || from.isDeleted()) {
-            throw new NotFoundException("桌子不存在, tableId=" + fromId);
+            throw new NotFoundException("Can not find table, tableId=" + fromId);
         }
         if (from.getStatus() == TableStatus.EMPTY) {
-            throw new PreconditionFailedException("桌子未开台, tableId=" + fromId);
+            throw new PreconditionFailedException("Table not open, tableId=" + fromId);
         }
         Table to = get(context, toId);
         if (to == null || to.isDeleted()) {
-            throw new NotFoundException("桌子不存在, tableId=" + toId);
+            throw new NotFoundException("Can not find table, tableId=" + toId);
         }
         if (to.getStatus() != TableStatus.EMPTY) {
-            throw new PreconditionFailedException("桌子不是空闲状态, tableId=" + toId);
+            throw new PreconditionFailedException("Table not available, tableId=" + toId);
         }
         Order order = null;
         if (from.getOrderId() != 0) {
             order = orderLogic.getOrder(context, from.getOrderId());
             if (order == null || order.isDeleted()) {
-                throw new NotFoundException("订单不存在, orderId=" + from.getOrderId());
+                throw new NotFoundException("Can not find order, orderId=" + from.getOrderId());
             }
         }
 
@@ -90,7 +90,7 @@ public class TableLogic extends BaseLogic {
     public Table add(EmenuContext context, Table table) {
         Table oldTable = getByName(context, table.getName());
         if (oldTable != null && !oldTable.isDeleted()) {
-            throw new DataConflictException("该餐桌已存在");
+            throw new DataConflictException("Table already exists");
         }
         long now = System.currentTimeMillis();
         table.setUpdateTime(now);
@@ -176,7 +176,7 @@ public class TableLogic extends BaseLogic {
     public Table update(EmenuContext context, Table table) {
         Table other = tableDb.getByTableName(context, table.getName());
         if (other != null && other.getId() != table.getId() && !other.isDeleted()) {
-            throw new DataConflictException("该餐桌已存在");
+            throw new DataConflictException("Table already exists");
         }
         table.setUpdateTime(System.currentTimeMillis());
         tableDb.update(context, table);

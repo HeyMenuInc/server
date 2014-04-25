@@ -219,7 +219,7 @@ public class PrinterLogic extends BaseLogic {
     public PrintComponent updateComponent(EmenuContext context, PrintComponent data) {
         PrintComponent old = printComponentDb.get(context, data.getId());
         if (old == null || old.isDeleted()) {
-            throw new NotFoundException("该页眉页脚不存在");
+            throw new NotFoundException("Can not find page component");
         }
         printComponentDb.update(context, data);
         return printComponentDb.get(context, data.getId());
@@ -232,7 +232,7 @@ public class PrinterLogic extends BaseLogic {
     public void deleteComponent(EmenuContext context, int id) {
         PrintComponent old = printComponentDb.get(context, id);
         if (old == null || old.isDeleted()) {
-            throw new NotFoundException("该页眉页脚不存在");
+            throw new NotFoundException("Can not find page component");
         }
         printComponentDb.delete(context, id);
         printTemplateDb.removeComponent(context, id);

@@ -7,7 +7,7 @@ define(function (require, exports, module) {
     var BaseValidator = require('./BaseValidator');
 
     var InvoiceValidator = BaseValidator.extend({
-        errorMessage: '请输入不小于0的数字',
+        errorMessage: 'Invalid invoice number',
         
 
         doValidate: function (item) {

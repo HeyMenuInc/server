@@ -19,7 +19,7 @@ public class DishTagDb extends IdNameDb<DishTag> implements IDishTagDb {
     private static final String TABLE_NAME = "dishTag";
 
     private static final String[] DEFAULT_DISH_TAGS = {
-            "热菜", "凉菜", "饮料"
+            "Entree", "Appetizer", "Beverage"
     };
 
     @Override

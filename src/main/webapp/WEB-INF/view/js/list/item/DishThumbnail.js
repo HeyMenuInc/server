@@ -97,7 +97,7 @@ define(function (require, exports, module) {
 
         onRemoveDish: function (evt) {
             evt.preventDefault();
-            if (window.confirm('确定移除菜品"' + this.model.get('name') + '"?')) {
+            if (window.confirm('Confirm deleting "' + this.model.get('name') + '"?')) {
                 var options = {};
                 options.data = {
                     dishId: this.model.get('id'),

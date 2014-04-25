@@ -17,7 +17,7 @@ define(function (require, exports, module) {
             el: '.input-name',
             validators: [{
                 type: Required,
-                errorMessage: '菜单名称不能为空'
+                errorMessage: 'Name must not be empty'
             }]
         }]
     });

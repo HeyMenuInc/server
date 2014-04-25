@@ -149,11 +149,11 @@ public class PrinterApiController extends BaseApiController {
         EmenuContext context = newContext(request);
         Order order = orderLogic.getOrder(context, orderId);
         if (order == null) {
-            throw new NotFoundException("该订单不存在");
+            throw new NotFoundException("Can not find order");
         }
         PrinterConfig config = printerLogic.getPrinterConfig(context, printerId);
         if (config == null) {
-            throw new NotFoundException("该打印机不存在");
+            throw new NotFoundException("Can not find printer");
         }
         User user = getLoginUser(request);
         if (order.getStatus() == 1) {
@@ -161,14 +161,14 @@ public class PrinterApiController extends BaseApiController {
             try {
                 printerLogic.printBill(context, bill, user, config.getName(), templateId);
             } catch (Exception e) {
-                throw new ServerError("打印失败");
+                throw new ServerError("Failed to print");
             }
         } else {
             try {
                 printerLogic.printOrder(context, orderWraper.wrap(context, order),
                         user, config.getName(), templateId);
             } catch (Exception e) {
-                throw new ServerError("打印失败");
+                throw new ServerError("Failed to print");
             }
         }
     }

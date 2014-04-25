@@ -7,7 +7,7 @@ define(function (require, exports, module) {
     var BaseValidator = require('./BaseValidator');
 
     var TableTipValidator = BaseValidator.extend({
-        errorMessage: '请输入大于0的数字',
+        errorMessage: 'Tip must not be negative',
 
         doValidate: function (item) {
             var tipMode = item.getValue().tipMode;

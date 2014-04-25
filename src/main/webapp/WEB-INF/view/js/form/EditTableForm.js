@@ -24,7 +24,7 @@ define(function (require, exports, module) {
             type: Text,
             validators: [{
                 type: Required,
-                errorMessage: '桌名不能为空'
+                errorMessage: 'Table name must no be empty'
             }]
         }, {
             name: 'type',
@@ -35,29 +35,29 @@ define(function (require, exports, module) {
             type: Text,
             validators: [{
                 type: Required,
-                errorMessage: '最多人数不能为空'
+                errorMessage: 'Maximum guests must not be empty'
             }, {
                 type: MoreThan,
                 other: 0,
-                errorMessage: '请输入大于0的整数'
+                errorMessage: 'Please input a positive number'
             }, {
                 type: Integer,
-                errorMessage: '请输入大于0的整数'
+                errorMessage: 'Please input an integer'
             }]
         }, {
             name: 'minCharge',
             type: Text,
             validators: [{
                 type: Required,
-                errorMessage: '请输入最低消费'
+                errorMessage: 'Please specify minimum charge'
             }, {
                 type: MoreThan,
                 other: 0,
                 including: true,
-                errorMessage: '请输入大于0的数字'
+                errorMessage: 'Please input a positive number'
             }, {
                 type: Number,
-                errorMessage: '请输入数字'
+                errorMessage: 'Please input a number'
             }]
         }, {
             name: 'tip',
@@ -71,8 +71,8 @@ define(function (require, exports, module) {
         /* -------------------- Event Listener ----------------------- */
         
         onFailed: function (xhr) {
-            var msg = this.model.isNew() ? '新建' : '编辑';
-            msg = msg + '餐桌失败';
+            var msg = this.model.isNew() ? 'New' : 'Edit';
+            msg = msg + 'Failed to edit table';
             window.alert(msg);
         }
     });
