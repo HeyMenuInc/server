@@ -41,6 +41,7 @@ public class UserDbTest {
         EmenuContext context = new EmenuContext();
         User user = new User();
         user.setName("Test");
+        user.setRealName("Real");
         user.setPassword("password");
         userDb.add(context, user);
         List<User> users = userDb.getAll(context);
@@ -53,6 +54,7 @@ public class UserDbTest {
         updatedUser = users.get(0);
         assertTrue(updatedUser.isDeleted());
         assertEquals("Test", updatedUser.getName());
+        assertEquals("Real", updatedUser.getRealName());
         assertEquals("password", user.getPassword());
 
 
@@ -61,7 +63,8 @@ public class UserDbTest {
         users = userDb.getAll(context);
         assertEquals(1, users.size());
         updatedUser = users.get(0);
-        assertEquals("name", updatedUser.getName());
+        assertEquals("Test", updatedUser.getName());
+        assertEquals("Real", updatedUser.getRealName());
         assertEquals("password", updatedUser.getPassword());
         assertFalse(updatedUser.isDeleted());
     }
