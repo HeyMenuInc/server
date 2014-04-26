@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hummingbird</title>
+    <title>Heymenu</title>
 #parse("component/static_head.vm")
   </head>
 

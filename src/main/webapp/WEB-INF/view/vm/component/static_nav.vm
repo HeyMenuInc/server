@@ -4,15 +4,15 @@
 			<ul class="row">
 				<li class="col-sm-2 logo col-md-3">
 					<a href="index">
-						<p class="pull-left hidden-sm">Hummingbird</p>
-						<img class="pull-left center-block" src="static/global/ic-nav.png" alt="Hummingbird Logo">
+						<p class="pull-left hidden-sm">Heymenu</p>
+						<img style="width:30px;" class="pull-left center-block" src="static/global/heymenu.png" alt="Heymenu Logo">
 					</a>
 				</li>
 				
 				<li class="col-sm-6 col-md-5">		
 					<div class="row">
-					<a class="col-md-6 pull-right" href="hummingmanager">HummingManager</a>
-					<a class="col-md-6 pull-right" href="hummingmenu">HummingMenu</a>
+					<a class="col-md-6 pull-right" href="hummingmanager">Heymenu Admin</a>
+					<a class="col-md-6 pull-right" href="hummingmenu">Heymenu</a>
 					</div>
 				</li>
 				
