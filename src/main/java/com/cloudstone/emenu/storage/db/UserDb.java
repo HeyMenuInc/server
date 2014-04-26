@@ -217,8 +217,8 @@ public class UserDb extends SQLiteDb implements IUserDb {
             stmt.bind(5, user.getCreatedTime());
             stmt.bind(6, user.getUpdateTime());
             stmt.bind(7, user.isDeleted() ? 1 : 0);
-            stmt.bind(8, user.getId());
-            stmt.bind(9, user.getRestaurantId());
+            stmt.bind(8, user.getRestaurantId());
+            stmt.bind(9, user.getId());
         }
     }
 }
