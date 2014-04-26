@@ -18,7 +18,7 @@
 					<p>Customers browse the menu and order themselves.</br>Fast table turn means more sales.</br>Better dining experience means more return customers</p>
 				</div>
 				<div class="col-xs-12 col-sm-5 col-sm-offset-1">
-					<img src="static/home/cover.png" class="img-responsive" alt="Hummingbird Tablet">
+					<img src="static/home/cover.png" class="img-responsive" alt="Heymenu Tablet">
 				</div>
 				<div class="slogan col-xs-12 col-sm-5 col-sm-offset-1 text-center hidden-xs">
 					<h1>Tablet For Customers</br></h1>
@@ -42,7 +42,7 @@
 					Browse Menu With Elegant User Interface
 				</h2>
 				
-				<p class="col-xs-12 col-sm-10 col-sm-offset-1 text-center txt-content">Hummingbird brings your menus to life like never before with vivid, colorful tablet displays and high-resolution images of every food item.</br>Better understanding, less frustration for your customers.</p>
+				<p class="col-xs-12 col-sm-10 col-sm-offset-1 text-center txt-content">Heymenu brings your menus to life like never before with vivid, colorful tablet displays and high-resolution images of every food item.</br>Better understanding, less frustration for your customers.</p>
 				
 				<div class="col-xs-12 col-sm-12 img-content pull-left">
 					<img src="static/products/hummingmenu/view-menu.png" class="center-block img-responsive" alt="View Menu">

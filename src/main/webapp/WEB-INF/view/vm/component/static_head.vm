@@ -1,6 +1,6 @@
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
-	<meta name="description" content="Hummingbird revolutionizes the dining experience with interactive tablet Menu."/>
-	<meta name="keywords" content="hummingbird, menu, tablet, restaurant, dinning, food, drinks, menu, app, restaurant, technology, application, digital menu, customer service, dinning experience, interactive, menu ordering software"/>
+	<meta name="description" content="Heymenu revolutionizes the dining experience with interactive tablet Menu."/>
+	<meta name="keywords" content="Heymenu, menu, tablet, restaurant, dinning, food, drinks, menu, app, restaurant, technology, application, digital menu, customer service, dinning experience, interactive, menu ordering software"/>
 	<meta name="generator" content="2.3.50.166"/>
 	<link rel="icon" href="static/favicon.ico"/>
 	<!-- bootstrap -->
@@ -20,6 +20,6 @@
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-47909335-1', 'hummingbirdsystem.com');
+	  ga('create', 'UA-47909335-1', 'Heymenu.com');
 	  ga('send', 'pageview');
 	</script>
