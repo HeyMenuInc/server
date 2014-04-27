@@ -11,8 +11,8 @@
 				
 				<li class="col-sm-6 col-md-5">		
 					<div class="row">
-					<a class="col-md-6 pull-right" href="hummingmanager">Heymenu Admin</a>
-					<a class="col-md-6 pull-right" href="hummingmenu">Heymenu</a>
+					<a class="col-md-6 pull-right" href="heymenumanager">Heymenu Admin</a>
+					<a class="col-md-6 pull-right" href="heymenu">Heymenu</a>
 					</div>
 				</li>
 				
@@ -52,8 +52,8 @@
 				<ul class="col-xs-12">
 					<li>Products</li>
 					
-					<li><a href="hummingmenu">HummingMenu</a></li>
-					<li><a href="hummingmanager">HummingManager</a></li>
+					<li><a href="heymenu">heymenu</a></li>
+					<li><a href="heymenumanager">heymenumanager</a></li>
 				</ul>
 				
 				<ul class="col-sm-3">

@@ -4,8 +4,8 @@
 				<ul class="col-sm-3">
 					<li>Products</li>
 					
-					<li><a href="hummingmenu">Heymenu</a></li>
-					<li><a href="hummingmanager">Heymenu Admin</a></li>
+					<li><a href="heymenu">Heymenu</a></li>
+					<li><a href="heymenumanager">Heymenu Admin</a></li>
 				</ul>
 
 				<ul class="col-sm-3">
@@ -26,7 +26,7 @@
 				<ul class="col-sm-3">
 					<li>Follow Us</li>
 					
-					<li><a href="https://www.facebook.com/hummingbirdsystem">
+					<li><a href="https://www.facebook.com/heymenu">
 						<img src="static/global/ic-facebook.png" class="pull-left img-responsive" alt="Facebook Icon"> Facebook
 					</a></li>	
 					<li><a href="https://twitter.com/hummingbird_sys">
