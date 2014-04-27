@@ -18,7 +18,7 @@
 					<p>Manage your restaurant on the web</br> anytime and anywhere using a PC, Mac or iPad</p>
 				</div>
 				<div class="col-xs-12 col-sm-7">
-					<img src="static/home/managing-tool.png" class="img-responsive" alt="HummingManager">
+					<img src="static/home/managing-tool.png" class="img-responsive" alt="HeymenuManager">
 				</div>
 				<div class="slogan col-xs-12 col-sm-5 text-center hidden-xs">
 					<h1>Restaurant Management Software</br></h1>
@@ -27,10 +27,10 @@
 			</div>
 			
 			<div class="row text-center">
-				<div class="col-xs-3"><img src="static/products/hummingmanager/ic-edit-menu.png" class="center-block img-responsive" alt="Edit Menu">Edit Menu</div>
-				<div class="col-xs-3"><img src="static/products/hummingmanager/ic-manage-tables.png" class="center-block img-responsive" alt="Manage Tables">Manage Tables</div>
-				<div class="col-xs-3"><img src="static/products/hummingmanager/ic-manage-devices.png" class="center-block img-responsive" alt="Manage Devices">Manage Devices</div>
-				<div class="col-xs-3"><img src="static/products/hummingmanager/ic-manage-users.png" class="center-block img-responsive" alt="Manage Users">Manage Users</div>
+				<div class="col-xs-3"><img src="static/products/heymenumanager/ic-edit-menu.png" class="center-block img-responsive" alt="Edit Menu">Edit Menu</div>
+				<div class="col-xs-3"><img src="static/products/heymenumanager/ic-manage-tables.png" class="center-block img-responsive" alt="Manage Tables">Manage Tables</div>
+				<div class="col-xs-3"><img src="static/products/heymenumanager/ic-manage-devices.png" class="center-block img-responsive" alt="Manage Devices">Manage Devices</div>
+				<div class="col-xs-3"><img src="static/products/heymenumanager/ic-manage-users.png" class="center-block img-responsive" alt="Manage Users">Manage Users</div>
 			</div>
 		</div>
 	</div>
@@ -45,7 +45,7 @@
 				<p class="col-xs-12 col-sm-10 col-sm-offset-1 text-center txt-content">Manage your restaurant on the web anytime and anywhere using a PC, Mac or iPad. </br>Log into your account and make a change, it will sync with all the tablets at your restaurant over the cloud.</p>
 				
 				<div class="col-xs-12 col-sm-12 img-content pull-left">
-					<img src="static/products/hummingmanager/edit-menu.png" class="center-block img-responsive" alt="Edit Menu">
+					<img src="static/products/heymenumanager/edit-menu.png" class="center-block img-responsive" alt="Edit Menu">
 				</div>
 			</div>
 		</div>
@@ -58,10 +58,10 @@
 				Overwatch Each Table Without Being There
 			</h2>
 			
-			<p class="col-xs-12 col-sm-10 col-sm-offset-1 text-center txt-content">Check the status of each table at a glance and make a switch with a simple click. </br> HummingManager will make sure you're always running at full capacity.</p>
+			<p class="col-xs-12 col-sm-10 col-sm-offset-1 text-center txt-content">Check the status of each table at a glance and make a switch with a simple click. </br> heymenumanager will make sure you're always running at full capacity.</p>
 			
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 img-content pull-left">
-					<img src="static/products/hummingmanager/manage-tables.png" class="center-block img-responsive" alt="Manage Tables">
+					<img src="static/products/heymenumanager/manage-tables.png" class="center-block img-responsive" alt="Manage Tables">
 			</div>
 		</div>
 	</div>
@@ -76,7 +76,7 @@
 				<p class="col-xs-12 col-sm-10 col-sm-offset-1 text-center txt-content">See which tablet is low in power or doesn't function normally from the web. </br>Ensure your customer the best dinning experience.</p>
 				
 				<div class="col-xs-12 col-sm-12 img-content pull-left">
-					<img src="static/products/hummingmanager/manage-devices.png" class="center-block img-responsive" alt="Manage Devices">
+					<img src="static/products/heymenumanager/manage-devices.png" class="center-block img-responsive" alt="Manage Devices">
 				</div>
 			</div>
 		</div>
@@ -91,7 +91,7 @@
 			<p class="col-xs-12 col-sm-10 col-sm-offset-1 text-center txt-content">Giving employees different level of access to your restaurant management.</br>Multiple users can access the same system helping you run your restaurant more effectively.  </p>
 			
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 img-content pull-left">
-					<img src="static/products/hummingmanager/manage-users.png" class="center-block img-responsive" alt="Manage Users">
+					<img src="static/products/heymenumanager/manage-users.png" class="center-block img-responsive" alt="Manage Users">
 			</div>
 		</div>
 	</div>

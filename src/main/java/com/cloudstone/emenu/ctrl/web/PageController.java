@@ -87,10 +87,10 @@ public class PageController extends BaseWebController {
         return sendView("404", req, resp, model);
     }
 
-    @RequestMapping(value = "/hummingmanager", method = RequestMethod.GET)
+    @RequestMapping(value = "/heymenumanager", method = RequestMethod.GET)
     public String management(HttpServletRequest req, HttpServletResponse resp
             , ModelMap model) {
-        return sendView("hummingmanager", req, resp, model);
+        return sendView("heymenumanager", req, resp, model);
     }
 
     @RequestMapping(value = "/about", method = RequestMethod.GET)
@@ -99,10 +99,10 @@ public class PageController extends BaseWebController {
         return sendView("about", req, resp, model);
     }
 
-    @RequestMapping(value = "/hummingmenu", method = RequestMethod.GET)
+    @RequestMapping(value = "/heymenu", method = RequestMethod.GET)
     public String tablet(HttpServletRequest req, HttpServletResponse resp
             , ModelMap model) {
-        return sendView("hummingmenu", req, resp, model);
+        return sendView("heymenu", req, resp, model);
     }
 
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
