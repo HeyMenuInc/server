@@ -16,7 +16,7 @@ public class Dish extends IdName {
     private int spicy;
     private boolean specialPrice = false;
     private boolean nonInt = false; //是否允许小数份
-    private String desc;
+    private String desc = "";
     private String imageId;
     private int status = Const.DishStatus.STATUS_INIT;
     private String pinyin;

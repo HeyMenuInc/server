@@ -29,6 +29,7 @@ import com.cloudstone.emenu.util.IdGenerator;
  * @author xuhongfeng
  */
 public abstract class SQLiteDb extends BaseStorage implements IDb {
+
     private static final Logger LOG = LoggerFactory.getLogger(SQLiteDb.class);
 
     private static final String SQL_CREATE = "CREATE TABLE IF NOT EXISTS %s (%s)";
@@ -136,13 +137,13 @@ public abstract class SQLiteDb extends BaseStorage implements IDb {
     }
 
     protected void executeSQL(EmenuContext context, String sql, StatementBinder binder) {
-        LOG.info(sql);
         synchronized (dataSource) {
             try {
                 SQLiteConnection conn = getConnection(context);
                 SQLiteStatement stmt = conn.prepare(sql);
                 try {
                     binder.onBind(stmt);
+                    LOG.info(stmt.toString());
                     stmt.stepThrough();
                 } finally {
                     stmt.dispose();
@@ -192,7 +193,7 @@ public abstract class SQLiteDb extends BaseStorage implements IDb {
                     SQLiteStatement stmt = conn.prepare(sql);
                     try {
                         binder.onBind(stmt);
-                        LOG.info(sql);
+                        LOG.info(stmt.toString());
                         return parseData(stmt, rowMapper);
                     } finally {
                         stmt.dispose();
