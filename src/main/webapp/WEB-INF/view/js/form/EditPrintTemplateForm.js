@@ -23,7 +23,7 @@ define(function (require, exports, module) {
             el: '.input-name',
             validators: [{
                 type: Required,
-                errorMessage: '模板名称不能为空'
+                errorMessage: 'Template name is required'
             }]
         }, {
             name: 'headerId',
@@ -47,15 +47,15 @@ define(function (require, exports, module) {
             el: '.input-fontSize',
             validators: [{
                 type: Required,
-                errorMessage: '字号不能为空'
+                errorMessage: 'This is required'
             }, {
                 type: Integer,
-                errorMessage: '请输入整数'
+                errorMessage: 'Please input an integer'
             }, {
                 type: MoreThan,
                 other: 1,
                 including: true,
-                errorMessage: '不能小于1'
+                errorMessage: 'Most be greater than 1'
             }]
         }, {
             name: 'chapterIds',

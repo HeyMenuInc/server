@@ -19,7 +19,7 @@ define(function (require, exports, module) {
             el: '.input-name',
             validators: [{
                 type: Required,
-                errorMessage: '页眉页脚名称不能为空'
+                errorMessage: 'Must not be empty'
             }]
         }, {
             name: 'content',

@@ -12,7 +12,7 @@ define(function (require, exports, module) {
     });
 
     var PrintDialog = FormDialog.extend({
-        header: '打印',
+        header: 'Print',
 
         FormType: require('../form/PrintForm'),
 
