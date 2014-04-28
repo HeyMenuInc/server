@@ -29,41 +29,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 public class MenuApiTest extends TestBase {
 
-    @Autowired
-    private MenuLogic menuLogic;
-
-    @Autowired
-    private RestaurantLogic restLogic;
-
-    // ------------------------------------
-    //    Utilities
-    // ------------------------------------
-    private Restaurant restaurant(String name) {
-        Restaurant rest = new Restaurant();
-        rest.setName(name);
-        return restLogic.add(new EmenuContext(), rest);
-    }
-
-    private Menu menu(String name) throws Exception {
-        Menu menu = new Menu();
-        menu.setName(name);
-        menu.setRestaurantId(restaurant("restaurant").getId());
-        return menuLogic.addMenu(new EmenuContext(), menu);
-    }
-
-    private Chapter chapter(String name) throws Exception {
-        Chapter chapter = new Chapter();
-        chapter.setName(name);
-        chapter.setMenuId(menu("menu").getId());
-        return menuLogic.addChapter(new EmenuContext(), chapter);
-    }
-
-    private Dish dish(String name) throws Exception {
-        Dish dish = new Dish();
-        dish.setName(name);
-        return menuLogic.addDish(new EmenuContext(), dish);
-    }
-
     // ------------------------------------
     //    Tests
     // ------------------------------------

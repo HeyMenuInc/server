@@ -1,5 +1,12 @@
 package com.cloudstone.emenu.integration;
 
+import com.cloudstone.emenu.EmenuContext;
+import com.cloudstone.emenu.data.Chapter;
+import com.cloudstone.emenu.data.Dish;
+import com.cloudstone.emenu.data.Menu;
+import com.cloudstone.emenu.data.Restaurant;
+import com.cloudstone.emenu.logic.MenuLogic;
+import com.cloudstone.emenu.logic.RestaurantLogic;
 import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -24,5 +31,41 @@ public class TestBase {
     @Before
     public void setUp() {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+    }
+
+
+    @Autowired
+    protected MenuLogic menuLogic;
+
+    @Autowired
+    protected RestaurantLogic restLogic;
+
+    // ------------------------------------
+    //    Utilities
+    // ------------------------------------
+    protected Restaurant restaurant(String name) {
+        Restaurant rest = new Restaurant();
+        rest.setName(name);
+        return restLogic.add(new EmenuContext(), rest);
+    }
+
+    protected Menu menu(String name) throws Exception {
+        Menu menu = new Menu();
+        menu.setName(name);
+        menu.setRestaurantId(restaurant("restaurant").getId());
+        return menuLogic.addMenu(new EmenuContext(), menu);
+    }
+
+    protected Chapter chapter(String name) throws Exception {
+        Chapter chapter = new Chapter();
+        chapter.setName(name);
+        chapter.setMenuId(menu("menu").getId());
+        return menuLogic.addChapter(new EmenuContext(), chapter);
+    }
+
+    protected Dish dish(String name) throws Exception {
+        Dish dish = new Dish();
+        dish.setName(name);
+        return menuLogic.addDish(new EmenuContext(), dish);
     }
 }

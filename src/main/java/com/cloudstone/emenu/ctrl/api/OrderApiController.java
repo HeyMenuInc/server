@@ -132,6 +132,9 @@ public class OrderApiController extends BaseApiController {
             , @RequestBody String body) {
         OrderVO order = JsonUtils.fromJson(body, OrderVO.class);
         EmenuContext context = newContext(request);
+        if (order == null || order.getDishes() == null) {
+            throw(new BadRequestError("no dishes in order"));
+        }
         return orderLogic.submit(context, order, order.getDishes());
     }
 
