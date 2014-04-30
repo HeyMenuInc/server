@@ -13,6 +13,7 @@
 <script type="text/javascript" src="/static/vendor/backbone.js"></script>
 <script type="text/javascript" src="/static//vendor/less.js"></script>
 <script type="text/javascript" src="/static/vendor/handlebars.js"></script>
+<script type="text/javascript" src="/static/util/OrderUtils.js"></script>
 <script type="text/javascript">
     seajs.config({
         base: '/static/'

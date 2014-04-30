@@ -273,13 +273,10 @@ public class MenuLogic extends BaseLogic {
         if (old != null && old.getMenuId() == chapter.getMenuId() && !old.isDeleted()) {
             throw new DataConflictException("Category exists.");
         }
-
         List<Chapter> chapters = listChapterByMenuId(context, chapter.getMenuId());
-        LOG.info(chapter.getOrdinal() + " ------- ");
         if (chapter.getOrdinal() == 0) {
             chapter.setOrdinal(chapters.size() + 1);
         }
-        LOG.info(chapter.getOrdinal() + " ------- ");
         for (int i = chapter.getOrdinal(); i < chapters.size(); i++) {
             Chapter c = chapters.get(i);
             c.setOrdinal(i + 1);

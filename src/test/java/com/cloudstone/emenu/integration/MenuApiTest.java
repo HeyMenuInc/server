@@ -45,10 +45,50 @@ public class MenuApiTest extends TestBase {
     public void createChapter() throws Exception {
         Menu menu = menu("test_menu");
         mockMvc.perform(post("/api/chapters")
-                    .content("{\"name\":\"test_chapter1\"}")
-                    .param("menuId", Integer.toString(menu.getId())))
+                    .content("{\"name\":\"test_chapter1\"," +
+                            "\"menuId\":" + menu.getId() + "}"))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id").value(isA(int.class)));
+
+        String chapter2Str = mockMvc.perform(post("/api/chapters")
+                    .content("{\"name\":\"test_chapter2\"," +
+                             "\"menuId\":" + menu.getId() + "}"))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.id").value(isA(int.class)))
+                .andReturn().getResponse().getContentAsString();
+
+        Chapter chapter2 = JsonUtils.fromJson(chapter2Str, Chapter.class);
+
+        mockMvc.perform(get("/api/chapters")
+                    .param("menuId", Integer.toString(menu.getId())))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(2)));
+
+        mockMvc.perform(get("/api/chapters")
+                .param("menuId", Integer.toString(menu.getId())))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(2)));
+
+        // Delete
+        mockMvc.perform(delete("/api/chapters/" + chapter2.getId()))
+                .andExpect(status().isOk());
+
+        mockMvc.perform(get("/api/chapters")
+                .param("menuId", Integer.toString(menu.getId())))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)));
+
+        // Add chapter2 again.
+        mockMvc.perform(post("/api/chapters")
+                .content("{\"name\":\"test_chapter2\"," +
+                        "\"menuId\":" + menu.getId() + "}"))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.id").value(isA(int.class)));
+
+        mockMvc.perform(get("/api/chapters")
+                .param("menuId", Integer.toString(menu.getId())))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(2)));
     }
 
     @Ignore

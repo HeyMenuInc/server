@@ -7,6 +7,7 @@ import com.cloudstone.emenu.data.Menu;
 import com.cloudstone.emenu.data.Restaurant;
 import com.cloudstone.emenu.logic.MenuLogic;
 import com.cloudstone.emenu.logic.RestaurantLogic;
+import com.cloudstone.emenu.util.JsonUtils;
 import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -53,7 +54,9 @@ public class TestBase {
         Menu menu = new Menu();
         menu.setName(name);
         menu.setRestaurantId(restaurant("restaurant").getId());
-        return menuLogic.addMenu(new EmenuContext(), menu);
+        menu = menuLogic.addMenu(new EmenuContext(), menu);
+        System.out.println("created menu " + JsonUtils.toJson(menu));
+        return menu;
     }
 
     protected Chapter chapter(String name) throws Exception {
