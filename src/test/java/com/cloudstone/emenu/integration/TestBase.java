@@ -7,6 +7,7 @@ import com.cloudstone.emenu.data.Menu;
 import com.cloudstone.emenu.data.Restaurant;
 import com.cloudstone.emenu.logic.MenuLogic;
 import com.cloudstone.emenu.logic.RestaurantLogic;
+import com.cloudstone.emenu.storage.db.IUserDb;
 import com.cloudstone.emenu.util.JsonUtils;
 import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.UUID;
+
 /**
  * Created by charliez on 4/26/14.
  */
@@ -23,6 +26,9 @@ import org.springframework.web.context.WebApplicationContext;
 @ContextConfiguration(locations = {"classpath:integrationTestContext.xml", "classpath:commonContext.xml"})
 @WebAppConfiguration
 public class TestBase {
+
+    @Autowired
+    private IUserDb userDb;
 
     @Autowired
     protected WebApplicationContext webApplicationContext;
@@ -70,5 +76,14 @@ public class TestBase {
         Dish dish = new Dish();
         dish.setName(name);
         return menuLogic.addDish(new EmenuContext(), dish);
+    }
+
+    protected String randomUser() {
+        String username = null;
+        do {
+            username = UUID.randomUUID().toString();
+        }
+        while (userDb.getByName(new EmenuContext(), username) != null);
+        return username;
     }
 }

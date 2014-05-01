@@ -19,7 +19,7 @@ public class User extends IdName {
 
     private int type;
 
-    private String realName;
+    private String realName = "";
 
     /* 备注 */
     private String comment = "";

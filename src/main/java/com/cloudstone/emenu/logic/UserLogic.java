@@ -6,6 +6,7 @@ package com.cloudstone.emenu.logic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import com.cloudstone.emenu.constant.Const.UserType;
 import org.springframework.beans.factory.annotation.Autowired;

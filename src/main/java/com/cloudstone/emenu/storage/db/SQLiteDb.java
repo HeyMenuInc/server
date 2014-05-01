@@ -152,6 +152,7 @@ public abstract class SQLiteDb extends BaseStorage implements IDb {
                     }
                 }
             } catch (SQLiteException e) {
+                LOG.error("SQL execution error: " + e.toString());
                 throw new ServerError(e);
             }
         }

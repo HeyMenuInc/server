@@ -25,7 +25,7 @@ define(function (require, exports, module) {
     exports.UserType = new Const({
         USER: {
             value: 0,
-            label: 'Server'
+            label: 'Waiter/Waitress'
         },
         ADMIN: {
             value: 1,

@@ -113,6 +113,10 @@ public class UserApiController extends BaseApiController {
         //password is ignored by json mapper
         user.setPassword(JsonUtils.getString(body, "password"));
         User loginUser = (User) request.getSession().getAttribute("loginUser");
+        if (loginUser == null) {
+            sendError(response, HttpServletResponse.SC_UNAUTHORIZED);
+            return null;
+        }
         if (loginUser.getType() == Const.UserType.SUPER_USER) {
             if (user.getRestaurantId() == 0) {
                 sendError(response, HttpServletResponse.SC_BAD_REQUEST);
