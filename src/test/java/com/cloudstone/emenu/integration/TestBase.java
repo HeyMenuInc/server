@@ -1,12 +1,11 @@
 package com.cloudstone.emenu.integration;
 
 import com.cloudstone.emenu.EmenuContext;
-import com.cloudstone.emenu.data.Chapter;
-import com.cloudstone.emenu.data.Dish;
-import com.cloudstone.emenu.data.Menu;
-import com.cloudstone.emenu.data.Restaurant;
+import com.cloudstone.emenu.constant.Const;
+import com.cloudstone.emenu.data.*;
 import com.cloudstone.emenu.logic.MenuLogic;
 import com.cloudstone.emenu.logic.RestaurantLogic;
+import com.cloudstone.emenu.logic.UserLogic;
 import com.cloudstone.emenu.storage.db.IUserDb;
 import com.cloudstone.emenu.util.JsonUtils;
 import org.junit.Before;
@@ -40,6 +39,8 @@ public class TestBase {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
+    @Autowired
+    protected UserLogic userLogic;
 
     @Autowired
     protected MenuLogic menuLogic;
@@ -85,5 +86,14 @@ public class TestBase {
         }
         while (userDb.getByName(new EmenuContext(), username) != null);
         return username;
+    }
+
+    protected User createWaiter() {
+        User user = new User();
+        user.setName(randomUser());
+        user.setPassword("password");
+        user.setType(Const.UserType.USER);
+        user = userLogic.add(new EmenuContext(), user);
+        return user;
     }
 }
