@@ -2,6 +2,9 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
 
+div {
+  border: solid;
+}
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -88,4 +91,7 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+core-item.core-selected {
+    color: red;
 }

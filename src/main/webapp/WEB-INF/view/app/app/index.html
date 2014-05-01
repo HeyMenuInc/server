@@ -15,22 +15,16 @@
         <!-- Place your HTML imports here -->
         <script src="bower_components/platform/platform.js"></script>
         <link rel="import" href="bower_components/polymer-ajax/polymer-ajax.html">
+            <link rel="import" href="elements/heymenu-app.html">
     </head>
     <body unresolved>
-        <div class="container">
-          <polymer-ajax url="http://localhost:8081/api/polling" handleAs="json">
-          </polymer-ajax>
-        </div>
-            
-        <script>
-          window.addEventListener('polymer-ready', function(e) {
-            console.log('polymer-ready!');
-            var ajax = document.querySelector('polymer-ajax');
-            ajax.addEventListener('polymer-response', function(e) {
-              console.log(this.response);
-            });
-            ajax.go();
-          });
-        </script>
+      <div class="container">
+        <heymenu-app></heymenu-app>
+      </div>
+      <script>
+        window.addEventListener('polymer-ready', function(e) {
+          console.log('polymer-ready!');
+        });
+      </script>
     </body>
 </html>
