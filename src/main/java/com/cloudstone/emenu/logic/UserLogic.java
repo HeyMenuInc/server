@@ -6,7 +6,6 @@ package com.cloudstone.emenu.logic;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import com.cloudstone.emenu.constant.Const.UserType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,7 @@ import org.springframework.stereotype.Component;
 import com.cloudstone.emenu.EmenuContext;
 import com.cloudstone.emenu.data.User;
 import com.cloudstone.emenu.exception.DataConflictException;
-import com.cloudstone.emenu.storage.db.IUserDb;
+import com.cloudstone.emenu.storage.dao.IUserDb;
 import com.cloudstone.emenu.util.DataUtils;
 
 /**

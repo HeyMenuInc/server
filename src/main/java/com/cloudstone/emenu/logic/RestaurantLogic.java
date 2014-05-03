@@ -2,7 +2,7 @@ package com.cloudstone.emenu.logic;
 
 import com.cloudstone.emenu.EmenuContext;
 import com.cloudstone.emenu.data.Restaurant;
-import com.cloudstone.emenu.storage.db.IRestaurantDb;
+import com.cloudstone.emenu.storage.dao.RastaurantDAO;
 import com.cloudstone.emenu.util.DataUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,7 +13,7 @@ import java.util.List;
 public class RestaurantLogic extends BaseLogic {
 
     @Autowired
-    private IRestaurantDb restaurantDb;
+    private RastaurantDAO restaurantDb;
 
     public Restaurant add(EmenuContext context, Restaurant restaurant) {
         long now = System.currentTimeMillis();
@@ -39,7 +39,7 @@ public class RestaurantLogic extends BaseLogic {
         return restaurantDb.update(context, restaurant);
     }
 
-    public void setRestaurantDb(IRestaurantDb restaurantDb) {
+    public void setRestaurantDb(RastaurantDAO restaurantDb) {
         this.restaurantDb = restaurantDb;
     }
 

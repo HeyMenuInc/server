@@ -114,6 +114,18 @@
             <version>1.9.1</version>
         </dependency>
 
+        <!-- MySQL database driver -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>3.2.1.RELEASE</version>
+        </dependency>
+
 
         <!-- sqlite -->
         <dependency>
@@ -128,7 +140,6 @@
             <type>${sqlite4java.lib.type}</type>
             <version>${sqlite4java.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.belerweb</groupId>
             <artifactId>pinyin4j</artifactId>
@@ -165,6 +176,12 @@
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path-assert</artifactId>
             <version>0.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.177</version>
             <scope>test</scope>
         </dependency>
 

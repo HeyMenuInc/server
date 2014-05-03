@@ -21,7 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.cloudstone.emenu.EmenuContext;
 import com.cloudstone.emenu.logic.ConfigLogic;
-import com.cloudstone.emenu.storage.db.util.DbUpgrader;
+import com.cloudstone.emenu.storage.sqlitedb.util.DbUpgrader;
 
 /**
  * @author xuhongfeng

@@ -21,9 +21,9 @@ import com.cloudstone.emenu.data.Table;
 import com.cloudstone.emenu.data.User;
 import com.cloudstone.emenu.data.vo.OrderVO;
 import com.cloudstone.emenu.logic.UserLogic;
-import com.cloudstone.emenu.storage.db.IBillDb;
-import com.cloudstone.emenu.storage.db.util.DbTransaction;
-import com.cloudstone.emenu.storage.db.util.SqliteDataSource;
+import com.cloudstone.emenu.storage.dao.IBillDb;
+import com.cloudstone.emenu.storage.sqlitedb.util.DbTransaction;
+import com.cloudstone.emenu.storage.sqlitedb.util.SqliteDataSource;
 import com.cloudstone.emenu.util.JsonUtils;
 import com.cloudstone.emenu.util.PrinterUtils;
 

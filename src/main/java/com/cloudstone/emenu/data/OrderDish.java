@@ -4,7 +4,7 @@
  */
 package com.cloudstone.emenu.data;
 
-import com.cloudstone.emenu.storage.db.RelationDb.Relation;
+import com.cloudstone.emenu.storage.sqlitedb.RelationDb.Relation;
 
 /**
  * @author xuhongfeng

@@ -10,8 +10,8 @@ import com.cloudstone.emenu.EmenuContext;
 import com.cloudstone.emenu.data.Vip;
 import com.cloudstone.emenu.data.VipHistory;
 import com.cloudstone.emenu.exception.DataConflictException;
-import com.cloudstone.emenu.storage.db.VipDb;
-import com.cloudstone.emenu.storage.db.VipHistoryDb;
+import com.cloudstone.emenu.storage.sqlitedb.VipDb;
+import com.cloudstone.emenu.storage.sqlitedb.VipHistoryDb;
 import com.cloudstone.emenu.util.DataUtils;
 import com.cloudstone.emenu.util.MathUtil;
 

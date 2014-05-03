@@ -42,7 +42,7 @@ import com.cloudstone.emenu.data.misc.PollingManager;
 import com.cloudstone.emenu.data.misc.PollingManager.PollingMessage;
 import com.cloudstone.emenu.data.vo.OrderVO;
 import com.cloudstone.emenu.storage.cache.ThriftCache;
-import com.cloudstone.emenu.storage.db.ThriftSessionDb;
+import com.cloudstone.emenu.storage.sqlitedb.ThriftSessionDb;
 import com.cloudstone.emenu.util.CollectionUtils;
 import com.cloudstone.emenu.util.DataUtils;
 import com.cloudstone.emenu.util.StringUtils;

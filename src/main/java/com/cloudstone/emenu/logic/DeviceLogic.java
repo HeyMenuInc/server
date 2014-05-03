@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import com.cloudstone.emenu.EmenuContext;
 import com.cloudstone.emenu.data.Pad;
 import com.cloudstone.emenu.exception.DataConflictException;
-import com.cloudstone.emenu.storage.db.IPadDb;
+import com.cloudstone.emenu.storage.dao.IPadDb;
 import com.cloudstone.emenu.util.DataUtils;
 
 /**

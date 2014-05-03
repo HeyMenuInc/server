@@ -6,7 +6,7 @@ import com.cloudstone.emenu.data.*;
 import com.cloudstone.emenu.logic.MenuLogic;
 import com.cloudstone.emenu.logic.RestaurantLogic;
 import com.cloudstone.emenu.logic.UserLogic;
-import com.cloudstone.emenu.storage.db.IUserDb;
+import com.cloudstone.emenu.storage.dao.IUserDb;
 import com.cloudstone.emenu.util.JsonUtils;
 import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -5,11 +5,8 @@
 package com.cloudstone.emenu;
 
 import com.cloudstone.emenu.exception.ServerError;
-import com.cloudstone.emenu.storage.db.util.DbTransaction;
-import com.cloudstone.emenu.storage.db.util.SqliteDataSource;
-import org.springframework.beans.BeansException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import com.cloudstone.emenu.storage.sqlitedb.util.DbTransaction;
+import com.cloudstone.emenu.storage.sqlitedb.util.SqliteDataSource;
 
 /**
  * @author xuhongfeng

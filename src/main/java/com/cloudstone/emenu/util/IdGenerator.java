@@ -5,7 +5,7 @@
 package com.cloudstone.emenu.util;
 
 import com.cloudstone.emenu.EmenuContext;
-import com.cloudstone.emenu.storage.db.IDb;
+import com.cloudstone.emenu.storage.dao.IDb;
 
 /**
  * @author xuhongfeng

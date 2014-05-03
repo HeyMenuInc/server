@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 import com.cloudstone.emenu.EmenuContext;
 import com.cloudstone.emenu.data.DishRecord;
 import com.cloudstone.emenu.data.FreeDishRecord;
-import com.cloudstone.emenu.storage.db.IAddDishRecordDb;
-import com.cloudstone.emenu.storage.db.ICancelDishRecordDb;
-import com.cloudstone.emenu.storage.db.IFreeDishRecordDb;
+import com.cloudstone.emenu.storage.dao.IAddDishRecordDb;
+import com.cloudstone.emenu.storage.dao.ICancelDishRecordDb;
+import com.cloudstone.emenu.storage.dao.IFreeDishRecordDb;
 import com.cloudstone.emenu.util.DataUtils;
 
 /**

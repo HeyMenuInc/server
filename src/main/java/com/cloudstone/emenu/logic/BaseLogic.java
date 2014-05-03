@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.cloudstone.emenu.storage.db.util.SqliteDataSource;
+import com.cloudstone.emenu.storage.sqlitedb.util.SqliteDataSource;
 
 /**
  * @author xuhongfeng

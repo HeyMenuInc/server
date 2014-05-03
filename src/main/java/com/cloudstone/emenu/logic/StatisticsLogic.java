@@ -23,9 +23,9 @@ import com.cloudstone.emenu.data.MenuStat;
 import com.cloudstone.emenu.data.vo.OrderDishVO;
 import com.cloudstone.emenu.data.vo.OrderVO;
 import com.cloudstone.emenu.exception.ServerError;
-import com.cloudstone.emenu.storage.db.IDishStatDb;
-import com.cloudstone.emenu.storage.db.IGenStatDb;
-import com.cloudstone.emenu.storage.db.IMenuStatDb;
+import com.cloudstone.emenu.storage.dao.IDishStatDb;
+import com.cloudstone.emenu.storage.dao.IGenStatDb;
+import com.cloudstone.emenu.storage.dao.IMenuStatDb;
 import com.cloudstone.emenu.util.UnitUtils;
 
 @Component
@@ -86,7 +86,7 @@ public class StatisticsLogic extends BaseLogic {
                 stat.setDishName(dish.getName());
                 stat.setPrice(dish.getPrice());
             }
-            //TODO remove the dishClass in db
+            //TODO remove the dishClass in sqlitedb
             stat.setDishClass(menuLogic.getCategory(context, dish.getId()));
             ret.add(stat);
         }

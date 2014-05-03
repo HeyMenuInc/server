@@ -29,7 +29,7 @@ public class MyContextListener implements ServletContextListener {
         /*
         File dataDir = new File("/var/lib/sqlite");
         System.setProperty(Const.PARAM_CLOUDSTONE_DATA_DIR, dataDir.getAbsolutePath());
-        File dbFile = new File(dataDir, "cloudstone.db");
+        File dbFile = new File(dataDir, "cloudstone.sqlitedb");
         System.setProperty(Const.PARAM_DB_FILE, dbFile.getAbsolutePath());
         */
     }

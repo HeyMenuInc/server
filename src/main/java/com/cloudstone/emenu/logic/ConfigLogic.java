@@ -12,7 +12,7 @@ import com.cloudstone.emenu.constant.JsonKeyConst;
 import com.cloudstone.emenu.constant.ServerConfig;
 import com.cloudstone.emenu.data.Licence;
 import com.cloudstone.emenu.exception.ServerError;
-import com.cloudstone.emenu.storage.db.ConfigDb;
+import com.cloudstone.emenu.storage.sqlitedb.ConfigDb;
 import com.cloudstone.emenu.util.LicenceHelper;
 
 /**
@@ -47,7 +47,7 @@ public class ConfigLogic extends BaseLogic {
             return false;
         }
         if (ServerConfig.DB_VERSION < getDbVersion(context)) {
-            throw new ServerError("error db version");
+            throw new ServerError("error sqlitedb version");
         }
         return true;
     }

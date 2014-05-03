@@ -2,8 +2,8 @@ package com.cloudstone.emenu.logic;
 
 import com.cloudstone.emenu.EmenuContext;
 import com.cloudstone.emenu.data.Restaurant;
-import com.cloudstone.emenu.storage.db.RestaurantDb;
-import com.cloudstone.emenu.storage.db.util.SqliteDataSource;
+import com.cloudstone.emenu.storage.sqlitedb.RestaurantDb;
+import com.cloudstone.emenu.storage.sqlitedb.util.SqliteDataSource;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

@@ -28,14 +28,14 @@ import com.cloudstone.emenu.exception.DbNotFoundException;
 import com.cloudstone.emenu.exception.NotFoundException;
 import com.cloudstone.emenu.exception.PreconditionFailedException;
 import com.cloudstone.emenu.storage.cache.CommonCache;
-import com.cloudstone.emenu.storage.db.IChapterDb;
-import com.cloudstone.emenu.storage.db.IDishDb;
-import com.cloudstone.emenu.storage.db.IDishNoteDb;
-import com.cloudstone.emenu.storage.db.IDishPageDb;
-import com.cloudstone.emenu.storage.db.IDishPageDb.DishPage;
-import com.cloudstone.emenu.storage.db.IDishTagDb;
-import com.cloudstone.emenu.storage.db.IMenuDb;
-import com.cloudstone.emenu.storage.db.IMenuPageDb;
+import com.cloudstone.emenu.storage.dao.IChapterDb;
+import com.cloudstone.emenu.storage.dao.IDishDb;
+import com.cloudstone.emenu.storage.dao.IDishNoteDb;
+import com.cloudstone.emenu.storage.dao.IDishPageDb;
+import com.cloudstone.emenu.storage.dao.IDishPageDb.DishPage;
+import com.cloudstone.emenu.storage.dao.IDishTagDb;
+import com.cloudstone.emenu.storage.dao.IMenuDb;
+import com.cloudstone.emenu.storage.dao.IMenuPageDb;
 import com.cloudstone.emenu.util.CollectionUtils;
 import com.cloudstone.emenu.util.DataUtils;
 import com.cloudstone.emenu.util.StringUtils;
@@ -181,7 +181,7 @@ public class MenuLogic extends BaseLogic {
             String imageId = imageLogic.saveDishImage(dish.getUriData());
             dish.setImageId(imageId);
         }
-        //save to db
+        //save to sqlitedb
         dishDb.update(context, dish);
         //get with uriData
         return getDish(context, dish.getId(), true);
