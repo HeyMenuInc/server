@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cloudstone.emenu.storage.dao.IPayTypeDb;
-import com.cloudstone.emenu.storage.dao.IdNameDb;
 import org.springframework.stereotype.Repository;
 
 import com.cloudstone.emenu.EmenuContext;

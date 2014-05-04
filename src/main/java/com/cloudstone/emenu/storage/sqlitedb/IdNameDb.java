@@ -2,7 +2,7 @@
  * @(#)IdNameDb.java, Jul 22, 2013. 
  *
  */
-package com.cloudstone.emenu.storage.dao;
+package com.cloudstone.emenu.storage.sqlitedb;
 
 import java.util.List;
 

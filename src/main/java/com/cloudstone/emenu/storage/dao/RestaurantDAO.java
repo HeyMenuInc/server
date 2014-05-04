@@ -5,7 +5,7 @@ import com.cloudstone.emenu.data.Restaurant;
 
 import java.util.List;
 
-public interface RastaurantDAO extends IDb {
+public interface RestaurantDAO extends IDb {
     public Restaurant get(EmenuContext context, int id);
 
     public Restaurant add(EmenuContext context, Restaurant restaurant);

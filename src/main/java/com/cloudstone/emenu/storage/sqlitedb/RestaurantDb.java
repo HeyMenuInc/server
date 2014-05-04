@@ -4,14 +4,14 @@ import com.almworks.sqlite4java.SQLiteException;
 import com.almworks.sqlite4java.SQLiteStatement;
 import com.cloudstone.emenu.EmenuContext;
 import com.cloudstone.emenu.data.Restaurant;
-import com.cloudstone.emenu.storage.dao.RastaurantDAO;
+import com.cloudstone.emenu.storage.dao.RestaurantDAO;
 import com.cloudstone.emenu.storage.sqlitedb.util.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public class RestaurantDb extends SQLiteDb implements RastaurantDAO {
+public class RestaurantDb extends SQLiteDb implements RestaurantDAO {
 
     private static final String TABLE_NAME = "'restaurant'";
 
