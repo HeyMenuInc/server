@@ -27,10 +27,10 @@
 			</div>
 			
 			<div class="row text-center">
-				<div class="col-xs-3"><img src="static/products/heymenumanager/ic-edit-menu.png" class="center-block img-responsive" alt="Edit Menu">Edit Menu</div>
-				<div class="col-xs-3"><img src="static/products/heymenumanager/ic-manage-tables.png" class="center-block img-responsive" alt="Manage Tables">Manage Tables</div>
-				<div class="col-xs-3"><img src="static/products/heymenumanager/ic-manage-devices.png" class="center-block img-responsive" alt="Manage Devices">Manage Devices</div>
-				<div class="col-xs-3"><img src="static/products/heymenumanager/ic-manage-users.png" class="center-block img-responsive" alt="Manage Users">Manage Users</div>
+				<div class="col-xs-4"><img src="static/products/heymenumanager/ic-edit-menu.png" class="center-block img-responsive" alt="Edit Menu">Edit Menu</div>
+				<div class="col-xs-4"><img src="static/products/heymenumanager/ic-manage-tables.png" class="center-block img-responsive" alt="Manage Tables">Manage Tables</div>
+
+				<div class="col-xs-4"><img src="static/products/heymenumanager/ic-manage-users.png" class="center-block img-responsive" alt="Manage Users">Manage Users</div>
 			</div>
 		</div>
 	</div>
@@ -65,23 +65,8 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="wrapper-content">
-		<div class="container">
-			<div class="row">
-				<h2 class="col-xs-12 text-center ">
-					Have Full Control Of All The Devices 
-				</h2>
-				
-				<p class="col-xs-12 col-sm-10 col-sm-offset-1 text-center txt-content">See which tablet is low in power or doesn't function normally from the web. </br>Ensure your customer the best dinning experience.</p>
-				
-				<div class="col-xs-12 col-sm-12 img-content pull-left">
-					<img src="static/products/heymenumanager/manage-devices.png" class="center-block img-responsive" alt="Manage Devices">
-				</div>
-			</div>
-		</div>
-	</div>
-	
 	<div class="container">
 		<div class="row">
 			<h2 class="col-xs-12 text-center title-content">
@@ -94,6 +79,7 @@
 					<img src="static/products/heymenumanager/manage-users.png" class="center-block img-responsive" alt="Manage Users">
 			</div>
 		</div>
+	</div>
 	</div>
 	
 #parse("component/static_footer.vm")	

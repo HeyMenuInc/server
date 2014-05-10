@@ -27,10 +27,10 @@
 			</div>
 			
 			<div class="row text-center">
-				<div class="col-xs-3"><img src="static/products/heymenu/ic-view-menu.png" class="center-block img-responsive" alt="View Menu">View Menu</div>
-				<div class="col-xs-3"><img src="static/products/heymenu/ic-place-order.png" class="center-block img-responsive" alt="Place Order">Place Order</div>
+				<div class="col-xs-4"><img src="static/products/heymenu/ic-view-menu.png" class="center-block img-responsive" alt="View Menu">View Menu</div>
+				<div class="col-xs-4"><img src="static/products/heymenu/ic-place-order.png" class="center-block img-responsive" alt="Place Order">Place Order</div>
 				<!--<div class="col-xs-3"><img src="static/products/heymenu/ic-pay-bill.png" class="center-block img-responsive" alt="Pay Bill">Pay Bill</div>-->
-				<div class="col-xs-3"><img src="static/products/heymenu/ic-call-waitress.png" class="center-block img-responsive" alt="Call Waitress">Call Waitress</div>
+				<div class="col-xs-4"><img src="static/products/heymenu/ic-call-waitress.png" class="center-block img-responsive" alt="Call Waitress">Call Waitress</div>
 			</div>
 		</div>
 	</div>

@@ -29,14 +29,9 @@
 					<li><a href="https://www.facebook.com/heymenu">
 						<img src="static/global/ic-facebook.png" class="pull-left img-responsive" alt="Facebook Icon"> Facebook
 					</a></li>	
-					<li><a href="https://twitter.com/hummingbird_sys">
+					<li><a href="https://twitter.com/heymenu">
 						<img src="static/global/ic-twitter.png" class="pull-left img-responsive" alt="Twitter Icon">Twitter</a></li>
-					<li><a href="https://plus.google.com/+Hummingbirdsystem">
-						<img src="static/global/ic-googleplus.png" class="pull-left img-responsive" alt="Google+ Icon">Google+
-					</a></li>
-					<li><a href="http://www.linkedin.com/company/hummingbird-system">
-						<img src="static/global/ic-linkedin.png" class="pull-left img-responsive" alt="Linkedin Icon">Linkedin
-					</a></li>
+					
 				</ul>
 			</div>
 			<div class="col-sm-12 divider"></div>
