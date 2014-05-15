@@ -4,7 +4,7 @@
 			<ul class="row">
 				<li class="col-sm-2 logo col-md-3">
 					<a href="index">
-						<img style="width:30px;" class="pull-left center-block" src="static/global/ic-nav-full.png" alt="Heymenu Logo">
+						<img class="pull-left center-block" src="static/global/ic-nav-full.png" alt="Heymenu Logo">
 					</a>
 				</li>
 				

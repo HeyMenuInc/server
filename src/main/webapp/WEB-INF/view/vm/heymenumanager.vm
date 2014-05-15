@@ -44,7 +44,7 @@
 				
 				<p class="col-xs-12 col-sm-10 col-sm-offset-1 text-center txt-content">Manage your restaurant on the web anytime and anywhere using a PC, Mac or iPad. </br>Log into your account and make a change, it will sync with all the tablets at your restaurant over the cloud.</p>
 				
-				<div class="col-xs-12 col-sm-12 img-content pull-left">
+				<div class="col-xs-12 col-sm-8 col-sm-offset-2 img-content pull-left">
 					<img src="static/products/heymenumanager/edit-menu.png" class="center-block img-responsive" alt="Edit Menu">
 				</div>
 			</div>
