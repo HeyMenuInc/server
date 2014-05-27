@@ -57,12 +57,12 @@ public class UserApiTest extends TestBase {
         assertEquals(1, admin.getType());
 
         mockMvc.perform(post("/api/login")
-                .param("name", "test_admin1").param("password", "randomStuff"))
+                .param("name", username).param("password", "randomStuff"))
                 .andExpect(status().isUnauthorized());
 
         // Login as admin.
         session = mockMvc.perform(post("/api/login")
-                .param("name", "test_admin1").param("password", "test_admin"))
+                .param("name", username).param("password", "test_admin"))
                 .andExpect(status().isOk())
                 .andReturn().getRequest().getSession();
 
